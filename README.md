@@ -1,7 +1,7 @@
 # 🚀 Teste para Desenvolvedor Front-End
 
 ## 🎯 Objetivo
-Este repositório contém o teste para avaliação de candidatos à vaga de Desenvolvedor Front-End. O objetivo é criar uma landing page responsiva baseada no modelo do [Template Monster](https://demo.templatemonster.com/pt-br/demo/77934.html){:target="_blank"}, demonstrando habilidades com tecnologias modernas.
+Este repositório contém o teste para avaliação de candidatos à vaga de Desenvolvedor Front-End. O objetivo é criar uma landing page responsiva baseada no modelo do <a href="https://demo.templatemonster.com/pt-br/demo/77934.html" target="_blank">Template Monster</a>, demonstrando habilidades com tecnologias modernas.
 
 ## 📋 Instruções
 
