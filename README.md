@@ -1,49 +1,66 @@
-# 🚀 Teste para Desenvolvedor Front-End
+# 🚀 Desafio Técnico – Desenvolvedor(a) Frontend Bloomin
 
-## 🎯 Objetivo
-Este repositório contém o teste para avaliação de candidatos à vaga de Desenvolvedor Front-End. O objetivo é criar uma landing page responsiva baseada no modelo do <a href="https://demo.templatemonster.com/pt-br/demo/77934.html" target="_blank">Template Monster</a>, demonstrando habilidades com tecnologias modernas.
+## 📌 Descrição
+Você deve desenvolver um **site institucional** para uma empresa fictícia do **ramo industrial**.  
 
-## 📋 Instruções
+O site deve conter **4 páginas obrigatórias**:  
+- Home  
+- Empresa  
+- Produtos ou Serviços  
+- Contato  
 
-### 1. Escolha de Tecnologia
-Utilize uma das seguintes opções:
-- ⚙️ PHP com Bootstrap + Sass ou Tailwind  
-- ⚛️ React + Tailwind CSS
+---
 
-### 2. Estrutura do Projeto
-- 📱 Landing page responsiva (mobile-first)
-- 🏗️ Código bem estruturado e organizado
-- ✨ Fidelidade ao layout proposto
+## 🔧 Tecnologias
+Escolha **uma** das stacks abaixo:
 
-### 3. Fluxo de Trabalho
-1. 🛠 Clone este repositório
-2. 📦 Crie seu próprio repositório no GitHub
-3. 🌿 Crie duas branches: `main` e `developer`
-4. 💻 Trabalhe na branch `developer`
-5. 📌 Commits regulares com mensagens descritivas
-6. 🔀 Pull request de `developer` para `main` ao finalizar
+- **Opção A:** PHP + Bootstrap + **Sass**  
+- **Opção B:** Next.js + **Tailwind CSS**  
 
-### 4. Entrega
-📅 **Prazo final**: Terça-feira, 27/05, às 17h  
-📬 Envie o link do seu repositório para avaliação
+⚠️ O uso de **Sass** ou **Tailwind** é **obrigatório**.
 
-## 🛠️ Requisitos Técnicos
-| Categoria        | Detalhes                                                                 |
-|------------------|--------------------------------------------------------------------------|
-| Código           | Limpo, organizado e semântico                                            |
-| Design           | Responsivo, fiel ao layout e consistente                                 |
-| Funcionalidades  | Interações suaves e funcionais                                           |
-| Documentação     | README claro com instruções de instalação/execução                       |
+---
 
-## 🌟 Diferenciais
-- 🎭 Animações e microinterações
-- ⚡ Otimização de performance
-- 🧪 Testes automatizados
+## 📌 Requisitos Obrigatórios
+- Criar as 4 páginas descritas.  
+- Aplicar **SEO técnico** em todas as páginas.  
+- Estrutura **responsiva** e bem organizada.
+- Boas práticas de acessibilidade.  
+- Uso de componentes reutilizáveis (navbar, footer, cards, etc).
 
-## ⏳ Prazo
-**⏰ Data limite**: 27/05/2025  
-**🕔 Horário**: 14:00 (horário de Brasília)
+---
 
-> 📧 Em caso de dúvidas, entre em contato com o recrutador antes do prazo final.
+## ⭐ Diferenciais (opcionais)
+- Uso de uma **API externa**:
+  - **API de CEP** → preencher automaticamente os campos de endereço no formulário de contato.  
+  - **API de Blog/Notícias** → exibir posts em uma seção da Home.    
 
-💡 **Dica**: Mostre seu melhor trabalho! Estamos ansiosos para ver sua criatividade e habilidades técnicas.
+---
+
+## 📂 Entrega
+1. Faça um **fork deste repositório**.  
+2. Desenvolva seu projeto dentro do fork.  
+3. Crie um **novo arquivo README.md no seu repositório** contendo:
+   - Stack escolhida e justificativa.  
+   - Instruções de instalação/execução.  
+   - Principais práticas de SEO aplicadas.  
+   - Se usou API: qual e como foi integrada.  
+   - (Opcional) link de deploy, se quiser publicar.  
+4. Ao finalizar, **envie o link do seu repositório no GitHub**.  
+
+> ⚠️ **Não é necessário subir o site em produção.**  
+> Apenas o código e o README novo serão avaliados.  
+
+---
+
+## ⏰ Prazo de Entrega
+Segunda-feira, **dia 15/09, até às 10h da manhã**.  
+
+---
+
+## ✅ Avaliação
+- **Frontend (60%)** → organização, semântica, responsividade, SEO técnico.  
+- **Código e organização (20%)** → estrutura do projeto, clareza no uso de Sass/Tailwind, versionamento.  
+- **Extras (20%)** → API, acessibilidade, design diferenciado.  
+
+## Boa Sorte! 🍀
