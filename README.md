@@ -59,8 +59,8 @@ Segunda-feira, **dia 15/09, até às 10h da manhã**.
 ---
 
 ## ✅ Avaliação
-- **Frontend (60%)** → organização, semântica, responsividade, SEO técnico.  
-- **Código e organização (20%)** → estrutura do projeto, clareza no uso de Sass/Tailwind, versionamento.  
-- **Extras (20%)** → API, acessibilidade, design diferenciado.  
+- **Frontend** → organização, semântica, responsividade, SEO técnico.  
+- **Código e organização** → estrutura do projeto, clareza no uso de Sass/Tailwind, versionamento.  
+- **Extras** → API, acessibilidade, design diferenciado.  
 
 ## Boa Sorte! 🍀
