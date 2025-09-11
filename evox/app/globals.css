@@ -1,0 +1,5 @@
+@import "tailwindcss";
+
+.w_content {
+  @apply w-full mx-auto max-w-6xl ;
+}
