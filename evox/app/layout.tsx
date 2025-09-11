@@ -1,5 +1,16 @@
 
 import type { Metadata } from "next";
+
+export const metadata:Metadata = {
+  title: {
+    default: "Evox | Tecnologia que acolhe",
+    template: "Evox | Tecnologia que acolhe",
+    absolute: "",
+  },
+
+  description: "Automatize sua casa com tecnologia inteligente. Conforto, segurança e praticidade ao alcance de um toque."
+}
+
 import "./globals.css";
 
 import Navbar from './components/Navbar';
@@ -42,18 +53,15 @@ const poppins = localFont({
   ],
 })
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode;}>) 
+{
   return (
     <html lang="pt-br" className={poppins.className}>
       <body>
-        <WhatsappFloat />
         <Navbar />
         {children}
-        {/* <Footer /> */}
+        <Footer />
+        <WhatsappFloat />
       </body>
     </html>
   );

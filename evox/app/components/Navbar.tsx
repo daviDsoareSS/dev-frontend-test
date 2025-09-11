@@ -1,9 +1,29 @@
+"use client";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Navbar(){
+    const pathname = usePathname();
+    const isHome = pathname === "/";
+
+    const [isScroll, setIsScroll] = useState(false);
+    const handleScroll = () => {
+        const scrolled = window.scrollY;
+        setIsScroll(scrolled > 200);
+    }
+
+    useEffect(() =>{
+        handleScroll();
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+    
     return (
-        <nav className="text-white z-10 fixed w-full bg-transparent border-b-1 border-gray-100 ">
+        <nav className={`text-white z-10 w-full border-b-1 border-gray-100 transition-400 ease-in-out duration-400
+            ${ isHome ? isScroll ? 'bg-neutral-950/80 fixed' : 'bg-transparent fixed' : 'sticky bg-black' }`}
+        >
             <div className="w_content">
                 <div className="wrapper flex justify-between items-center w-full h-20">
                     <div className="logo">
@@ -16,18 +36,67 @@ export default function Navbar(){
                             <Link href="/empresa">Empresa</Link>
                         </li>
                         <li>
-                            <Link href="/servicos">Serviços</Link>
+                            <div className="group relative flex items-center gap-1 py-3 transition-all">
+                                <p className="flex items-center gap-2">
+                                    <span>Serviços</span>
+                                    <svg className="transition-all duration-200 rotate-0 group-hover:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                                    </svg>
+                                </p>
+
+                                {/* Dropdown */}
+                                <div className="text-black absolute right-o top-10 hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md transition-all group-hover:flex">
+                                    <Link 
+                                        className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
+                                        href="/servicos/iluminacao-inteligente"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                                        </svg>
+                                        <span className="whitespace-nowrap">
+                                            Iluminação inteligente
+                                        </span>
+                                    </Link>
+                                    <Link 
+                                        className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
+                                        href="/servicos/seguranca-e-monitoranto"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
+                                        </svg>
+                                        <span className="whitespace-nowrap">
+                                            Segurança e monitoramento
+                                        </span>
+                                    </Link>
+                                    <Link 
+                                        className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
+                                        href="/servicos/energia-sustentavel"
+                                    >
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
+                                        </svg>
+                                        <span className="whitespace-nowrap">
+                                            Energia sustentável
+                                        </span>
+                                    </Link>
+                                </div>
+
+                            </div>
+
                         </li>
                         <li>
                             <Link href="/contato">Contato</Link>
                         </li>
                     </ul>
-                    <a href="" className="items-center gap-1 text-sm inline-flex font-semibold btn_quote bg-white text-black pl-5 pr-5 pt-3 pb-3">
+                    <Link 
+                        href="" 
+                        className="rounded-sm items-center gap-1 text-sm inline-flex font-semibold bg-white text-black pl-5 pr-5 pt-3 pb-3"
+                    >
                         <span>Realizar orçamento</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                         </svg>
-                    </a>
+                    </Link>
                 </div>
             </div>
         </nav>  

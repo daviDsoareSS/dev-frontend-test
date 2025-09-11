@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+:root{
+  --color_primary: #035F8A;
+  --color_secondary: #FDBB2D;
+}
 .w_content {
   @apply w-full mx-auto max-w-6xl ;
 }
