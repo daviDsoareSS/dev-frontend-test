@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 
 export const metadata:Metadata = {
   title: {
-    default: "Evox | Tecnologia que acolhe",
-    template: "Evox | Tecnologia que acolhe",
+    default: `${SITE_NAME}`,
+    template: `%s - ${SITE_NAME}`,
     absolute: "",
   },
 
@@ -17,6 +17,7 @@ import Navbar from './components/Navbar';
 import WhatsappFloat from './components/WhatsappFloat';
 import Footer from './components/Footer';
 import localFont from 'next/font/local'
+import { SITE_NAME } from "./utils/constants";
 
 const poppins = localFont({
   src: [

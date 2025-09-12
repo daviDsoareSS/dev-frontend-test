@@ -62,9 +62,9 @@ export default function Home() {
       </Swiper>
       <section className="services text-black py-20">
         <div className="w_content">
-          <div className="text_introduction mb-10 ml-auto mr-auto text-2xl text-center w-160">
-            <p className="text-sm mb-3">Solicite seu serviço agora e transforme suas ideias em resultados!</p>
-            <h2 className="font-bold">Serviços sob medida, com qualidade e dedicação para os melhores resultados.</h2>
+          <div className="text_introduction mb-13 mx-auto text-center w-190">
+            <p className="text-sm text-neutral-600 mb-3">Solicite seu serviço agora e transforme suas ideias em resultados!</p>
+            <h2 className="text-4xl font-semibold">Serviços sob medida, com qualidade e dedicação para os melhores resultados.</h2>
           </div>
           <div className="flex justify-between flex-wrap w-full gap-x-10 gap-y-10 row-10 text-white mb-10">
             <ServiceCard
@@ -98,8 +98,8 @@ export default function Home() {
         <div className="w_content">
           <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
             <div className="mx-auto max-w-screen-sm">
-                <h2 className="mb-4 text-4xl tracking-tight font-bold text-gray-900 dark:text-white">Depoimentos</h2>
-                <p className="mb-4 font-light text-neutral-600 lg:mb-16 sm:text-xl">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
+                <h2 className="mb-4 text-4xl font-semibold text-white">Depoimentos</h2>
+                <p className="mb-4 font-light text-stone-300 lg:mb-16 sm:text-sm">Explore the whole collection of open-source web components and elements built with the utility classes from Tailwind</p>
             </div> 
             <Swiper 
               spaceBetween={20}
@@ -119,51 +119,17 @@ export default function Home() {
             >
               <SwiperSlide>
                 <figure className="max-w-screen-md mx-auto px-10">
-                  <svg className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg className="h-10 mx-auto mb-3 text-neutral-500" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
                   </svg> 
                   <blockquote>
-                    <p className="text-2xl font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
+                    <p className="text-lg text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
                   </blockquote>
                   <figcaption className="flex items-center justify-center mt-6 space-x-3">
                     <Image className="w-6 h-6 rounded-full" src="/assets/images/home/iluminacao-inteligente.webp" width={30} height={30} alt="profile picture"></Image>
-                    <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                        <div className="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</div>
-                        <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </SwiperSlide>
-              <SwiperSlide>
-                <figure className="max-w-screen-md mx-auto px-10">
-                  <svg className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
-                  </svg> 
-                  <blockquote>
-                    <p className="text-2xl font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-                  </blockquote>
-                  <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                    <Image className="w-6 h-6 rounded-full" src="/assets/images/home/iluminacao-inteligente.webp" width={30} height={30} alt="profile picture"></Image>
-                    <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                        <div className="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</div>
-                        <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
-                    </div>
-                  </figcaption>
-                </figure>
-              </SwiperSlide>
-              <SwiperSlide>
-                <figure className="max-w-screen-md mx-auto px-10">
-                  <svg className="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.017 18L14.017 10.609C14.017 4.905 17.748 1.039 23 0L23.995 2.151C21.563 3.068 20 5.789 20 8H24V18H14.017ZM0 18V10.609C0 4.905 3.748 1.038 9 0L9.996 2.151C7.563 3.068 6 5.789 6 8H9.983L9.983 18L0 18Z" fill="currentColor"/>
-                  </svg> 
-                  <blockquote>
-                    <p className="text-2xl font-medium text-gray-900 dark:text-white">"Flowbite is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application."</p>
-                  </blockquote>
-                  <figcaption className="flex items-center justify-center mt-6 space-x-3">
-                    <Image className="w-6 h-6 rounded-full" src="/assets/images/home/iluminacao-inteligente.webp" width={30} height={30} alt="profile picture"></Image>
-                    <div className="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
-                        <div className="pr-3 font-medium text-gray-900 dark:text-white">Micheal Gough</div>
-                        <div className="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">CEO at Google</div>
+                    <div className="flex items-center divide-x-2 divide-gray-700">
+                        <div className="pr-3 font-medium text-white">Micheal Gough</div>
+                        <div className="pl-3 text-sm font-light text-neutral-300">CEO at Google</div>
                     </div>
                   </figcaption>
                 </figure>

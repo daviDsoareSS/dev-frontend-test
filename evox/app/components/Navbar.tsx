@@ -1,13 +1,20 @@
 "use client";
-import { usePathname } from "next/navigation";
+
 import Image from "next/image";
 import Link from "next/link";
+import { whatsapp } from "../utils/constants";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default function Navbar(){
+    // MENU
+    const [isOpen, setIsOpen] = useState(false)
+
+    // IDENTIFICAR A HOME
     const pathname = usePathname();
     const isHome = pathname === "/";
 
+    // SE O USUÁRIO SCROLLAR
     const [isScroll, setIsScroll] = useState(false);
     const handleScroll = () => {
         const scrolled = window.scrollY;
@@ -21,8 +28,8 @@ export default function Navbar(){
     }, []);
     
     return (
-        <nav className={`text-white z-10 w-full border-b-1 border-gray-100 transition-400 ease-in-out duration-400
-            ${ isHome ? isScroll ? 'bg-neutral-950/80 fixed' : 'bg-transparent fixed' : 'sticky bg-black' }`}
+        <nav className={`text-white z-10 w-full transition-400 ease-in-out duration-400 top-0
+            ${ isHome ? isScroll ? 'bg-neutral-950/80 fixed' : 'bg-transparent fixed border-b-1 border-gray-100' : 'sticky bg-black' }`}
         >
             <div className="w_content">
                 <div className="wrapper flex justify-between items-center w-full h-20">
@@ -31,21 +38,25 @@ export default function Navbar(){
                             <Image src="/assets/images/logo_evox.webp" width={120} height={27} alt="Logo evox"/>
                         </Link>
                     </div>
-                    <ul className="flex items-center gap-10 text-sm">
-                        <li>
-                            <Link href="/empresa">Empresa</Link>
+                    <ul className={`hidden items-center gap-10 text-sm md:flex md:w-auto ${isOpen ? "bg-red-500 fixed top-0 left-0 items-center justify-center flex-col w-[90%]! h-[100dvh] flex!" : ""}`} id="navbar-default">
+                        <li className="group relative">
+                            <Link className="relative pb-8" href="/empresa">Empresa
+                            <span className="line w-0 left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300 pointer-events-none ease-in-out group-hover:w-20"></span>
+                            
+                            </Link>
                         </li>
                         <li>
-                            <div className="group relative flex items-center gap-1 py-3 transition-all">
+                            <div className="group relative flex items-center gap-1 py-6 transition-all">
                                 <p className="flex items-center gap-2">
                                     <span>Serviços</span>
-                                    <svg className="transition-all duration-200 rotate-0 group-hover:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                                    <svg 
+                                        className="transition-all duration-200 rotate-0 group-hover:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                     </svg>
                                 </p>
 
-                                {/* Dropdown */}
-                                <div className="text-black absolute right-o top-10 hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md transition-all group-hover:flex">
+                                {/* DROPDOWN */}
+                                <div className={`${isOpen ? "relative top-inherit right-inherit" : "fixed top-16 left-0"} text-black absolute hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md group-hover:flex`}>
                                     <Link 
                                         className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
                                         href="/servicos/iluminacao-inteligente"
@@ -89,7 +100,8 @@ export default function Navbar(){
                         </li>
                     </ul>
                     <Link 
-                        href="" 
+                        href={whatsapp}
+                        target="_blank" 
                         className="rounded-sm items-center gap-1 text-sm inline-flex font-semibold bg-white text-black pl-5 pr-5 pt-3 pb-3"
                     >
                         <span>Realizar orçamento</span>
@@ -97,6 +109,12 @@ export default function Navbar(){
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                         </svg>
                     </Link>
+
+                    <button onClick={() => setIsOpen(!isOpen)} type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                        <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                            <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15"/>
+                        </svg>
+                    </button>
                 </div>
             </div>
         </nav>  

@@ -16,3 +16,9 @@
 .w_content {
   @apply w-full mx-auto max-w-6xl ;
 }
+.input_style {
+  @apply rounded-sm w-full h-auto py-2 pl-3 text-sm text-neutral-600 bg-white border border-neutral-200 transition-all duration-200 ease-in pr-10 focus:outline focus:outline-offset-2 focus:outline-(--color_secondary);
+}
+.input_style::placeholder{
+  @apply text-xs;
+}
