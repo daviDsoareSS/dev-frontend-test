@@ -1,7 +1,7 @@
-export const metadata = {
-  title: 'Contato',
-  description: '',
-};
+"use client";
+
+import { useState } from "react";
+import axios from "axios";
 
 import Form from 'next/form'
 import Link from 'next/link';
@@ -9,13 +9,47 @@ import { email, endereço, phone } from '../utils/constants';
 import Breadcrumb from '../components/Breadcrumb';
 
 export default function Contato() {
+
+      const [form, setForm] = useState({
+        cep: "",
+        rua: "",
+        bairro: "",
+        cidade: "",
+        estado: ""
+      });
+
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setForm({ ...form, [e.target.name]: e.target.value });
+      };
+
+      const handleCepBlur = async () => {
+        if (form.cep.length === 8) { // CEP sem traço
+          try {
+            const response = await axios.get(`https://viacep.com.br/ws/${form.cep}/json/`);
+            if (!response.data.erro) {
+              setForm({
+                ...form,
+                rua: response.data.logradouro,
+                bairro: response.data.bairro,
+                cidade: response.data.localidade,
+                estado: response.data.uf
+              });
+            } else {
+              alert("CEP não encontrado!");
+            }
+          } catch (error) {
+            console.error("Erro ao buscar CEP:", error);
+          }
+        }
+      };
+
     return (
-      <section>
+      <>
         <Breadcrumb 
           title_page="Contato"
           banner="/assets/images/hero1.webp"
         />
-        <div className="py-20 w_content flex flex-wrap justify-between">
+        <div className="contact py-20 w_content flex flex-wrap justify-between">
           <div className="basis-140">
             <div className="mb-4">
               <h2 className="mb-2 text-2xl font-semibold">Ficou alguma dúvida?</h2>
@@ -24,13 +58,11 @@ export default function Contato() {
               </p>
               <Form action="/">
                 <div className="flex flex-col gap-5">
-                  <div className="flex flex-wrap gap-2">
-                  </div>
-                  <div >
+                  <div>
                     <label className="text-xs font-semibold block mb-2" htmlFor="name">Primeiro nome</label>
                     <input id="name" className="input_style" placeholder="Digite seu primeiro nome" type="text"/>
                   </div>
-                  <div >
+                  <div>
                     <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Sobrenome</label>
                     <input id="lastname" className="input_style" placeholder="Digite seu sobrenome" type="text"/>
                   </div>
@@ -38,6 +70,64 @@ export default function Contato() {
                     <label className="text-xs font-semibold block mb-2" htmlFor="name">E-mail</label>
                     <input className="input_style" placeholder="Digite seu e-mail" type="email"/>
                   </div>
+              <div className="">
+                <div>
+                  <label className="text-xs font-semibold block mb-2" htmlFor="lastname">CEP</label>
+                  <input
+                    className="input_style"
+                    type="text"
+                    name="cep"
+                    placeholder="CEP"
+                    value={form.cep}
+                    onChange={handleChange}
+                    onBlur={handleCepBlur}
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Rua</label>
+                  <input
+                    className="input_style"
+                    type="text"
+                    name="rua"
+                    placeholder="Rua"
+                    value={form.rua}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Bairro</label>
+                  <input
+                    className="input_style"
+                    type="text"
+                    name="bairro"
+                    placeholder="Bairro"
+                    value={form.bairro}
+                    onChange={handleChange}
+                  />
+                </div>
+              </div>
+              <div>
+                <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Cidade</label>
+                <input
+                  className="input_style"
+                  type="text"
+                  name="cidade"
+                  placeholder="Cidade"
+                  value={form.cidade}
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Estado</label>
+                <input
+                  className="input_style"
+                  type="text"
+                  name="estado"
+                  placeholder="Estado"
+                  value={form.estado}
+                  onChange={handleChange}
+                />
+              </div>
                   <div>
                     <label className="text-xs font-semibold block mb-2" htmlFor="message">Mensagem</label>
                     <textarea className="input_style py-3!" name="" id="message" rows={7} placeholder='Escreva sua mensagem aqui'></textarea>
@@ -116,6 +206,6 @@ export default function Contato() {
             </ul>
           </div>
         </div>
-      </section>
+      </>
     )
 }

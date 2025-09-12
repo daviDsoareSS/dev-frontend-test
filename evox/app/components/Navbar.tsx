@@ -56,7 +56,7 @@ export default function Navbar(){
                                 </p>
 
                                 {/* DROPDOWN */}
-                                <div className={`${isOpen ? "relative top-inherit right-inherit" : "fixed top-16 left-0"} text-black absolute hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md group-hover:flex`}>
+                                <div className={`${isOpen ? "relative top-inherit right-inherit" : "absolute top-16 left-0"} text-black  hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md group-hover:flex`}>
                                     <Link 
                                         className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
                                         href="/servicos/iluminacao-inteligente"

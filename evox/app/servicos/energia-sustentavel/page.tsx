@@ -1,3 +1,8 @@
+export const metadata = {
+  title: 'Energia sustentável',
+  description: '',
+};
+
 function generateStaticParams() {}
 
 export default function Page() {
