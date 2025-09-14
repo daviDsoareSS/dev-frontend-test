@@ -38,39 +38,48 @@ export default function Navbar(){
                             <Image src="/assets/images/logo_evox.webp" width={120} height={27} alt="Logo evox"/>
                         </Link>
                     </div>
-                    <ul className={`hidden items-center gap-10 text-sm md:flex md:w-auto ${isOpen ? "bg-red-500 fixed top-0 left-0 items-center justify-center flex-col w-[90%]! h-[100dvh] flex!" : ""}`} id="navbar-default">
+                    <ul 
+                        className = {`
+                            hidden items-center gap-10 text-sm md:flex md:w-auto
+                        `} 
+                        id="navbar-default"
+                    >
                         <li className="group relative">
                             <Link className="relative pb-8" href="/empresa">Empresa
-                            <span className="line w-0 left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300 pointer-events-none ease-in-out group-hover:w-20"></span>
-                            
+                                <span 
+                                    className={`line left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300 pointer-events-none ease-in-out ${pathname == '/empresa' ? 'w-20' : 'w-0'} group-hover:w-20`}
+                                ></span>
                             </Link>
                         </li>
                         <li>
-                            <div className="group relative flex items-center gap-1 py-6 transition-all">
-                                <p className="flex items-center gap-2">
+                            <div className="group relative flex items-center gap-1 py-8 transition-all">
+                                <p className="relative group flex items-center gap-2">
                                     <span>Serviços</span>
                                     <svg 
                                         className="transition-all duration-200 rotate-0 group-hover:rotate-180 size-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
                                     </svg>
                                 </p>
+                                <span 
+                                    className={`line left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300   pointer-events-none ease-in-out ${pathname.includes("servicos") ? 'w-20' : 'w-0'} group-hover:w-20`}
+                                ></span>
 
                                 {/* DROPDOWN */}
-                                <div className={`${isOpen ? "relative top-inherit right-inherit" : "absolute top-16 left-0"} text-black  hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md group-hover:flex`}>
+                                <div className={`absolute top-16 left-0 z-1 hidden w-auto flex-col gap-1 bg-white rounded-sm py-3 px-3 shadow-md group-hover:flex`}>
                                     <Link 
-                                        className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
+                                        className={`flex items-center gap-2 cursor-pointer py-1 px-1 ${pathname.includes("iluminacao-inteligente") ? 'text-semibold text-(--color_primary)' : 'text-neutral-600'} hover:text-(--color_primary) transition-all duration-200 ease-in-out`}
                                         href="/servicos/iluminacao-inteligente"
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
                                         </svg>
-                                        <span className="whitespace-nowrap">
+                                        <span className='whitespace-nowrap'>
                                             Iluminação inteligente
                                         </span>
                                     </Link>
                                     <Link 
-                                        className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
-                                        href="/servicos/seguranca-e-monitoranto"
+                                        className={`flex items-center gap-2 cursor-pointer py-1 px-1 ${pathname.includes("seguranca-e-monitoramento") ? 'text-semibold text-(--color_primary)' : 'text-neutral-600'} hover:text-(--color_primary) transition-all duration-200 ease-in-out`} 
+                                        href="/servicos/seguranca-e-monitoramento"
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -80,7 +89,7 @@ export default function Navbar(){
                                         </span>
                                     </Link>
                                     <Link 
-                                        className="flex items-center gap-2 cursor-pointer py-1 px-1 text-neutral-600 hover:text-black transition-all duration-200 ease-in-out" 
+                                        className={`flex items-center gap-2 cursor-pointer py-1 px-1 ${pathname.includes("energia-sustentavel") ? 'text-semibold text-(--color_primary)' : 'text-neutral-600'} hover:text-(--color_primary) transition-all duration-200 ease-in-out`} 
                                         href="/servicos/energia-sustentavel"
                                     >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
@@ -95,16 +104,21 @@ export default function Navbar(){
                             </div>
 
                         </li>
-                        <li>
-                            <Link href="/contato">Contato</Link>
+                        <li className="relative group">
+                            <Link className="relative pb-8" href="/contato">
+                                Contato  
+                                <span 
+                                    className={`line left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300 pointer-events-none ease-in-out ${pathname == '/contato' ? 'w-20' : 'w-0'} group-hover:w-20`}
+                                ></span>
+                            </Link>
                         </li>
                     </ul>
                     <Link 
                         href={whatsapp}
                         target="_blank" 
-                        className="rounded-sm items-center gap-1 text-sm inline-flex font-semibold bg-white text-black pl-5 pr-5 pt-3 pb-3"
+                        className="rounded-sm items-center gap-2 text-sm inline-flex font-semibold bg-white text-black pl-5 pr-5 pt-3 pb-3"
                     >
-                        <span>Realizar orçamento</span>
+                        <span>Fale com especialista</span>
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                         </svg>

@@ -47,106 +47,155 @@ export default function Contato() {
       <>
         <Breadcrumb 
           title_page="Contato"
-          banner="/assets/images/hero1.webp"
+          banner="/assets/images/contato/banner_contato.webp"
         />
-        <div className="contact py-20 w_content flex flex-wrap justify-between">
-          <div className="basis-140">
+        <div className="contact py-20 w_content flex flex-col gap-10 justify-between md:flex-row">
+          <div className="basis-1/1 md:basis-140">
             <div className="mb-4">
-              <h2 className="mb-2 text-2xl font-semibold">Ficou alguma dúvida?</h2>
-              <p className="text-sm text-neutral-600 mb-4">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis amet fugit aut saepe debitis maxime velit laborum distinctio molestiae accusantium sapiente, at quos, eos necessitatibus! Dicta est voluptas quaerat quo?
+              <h2 className="mb-4 text-2xl font-semibold">
+                Ficou alguma dúvida?
+              </h2>
+              <p className="text-sm text-neutral-600 mb-10">
+                Estamos aqui para ajudar! Se tiver qualquer dúvida sobre nossos serviços de automação residencial, soluções inteligentes ou instalação, entre em contato. Nossa equipe irá responder rapidamente e fornecer todas as informações que você precisa para tornar sua casa mais conectada e segura.
               </p>
               <Form action="/">
                 <div className="flex flex-col gap-5">
-                  <div>
-                    <label className="text-xs font-semibold block mb-2" htmlFor="name">Primeiro nome</label>
-                    <input id="name" className="input_style" placeholder="Digite seu primeiro nome" type="text"/>
+                  <div className="flex gap-4 justify-between items-center">
+                    {/* PRIMEIRO NOME */}
+                    <div className="w-full">
+                      <label className="text-xs font-semibold block mb-2" htmlFor="name">Primeiro nome</label>
+                      <input id="name" className="input_style" placeholder="Digite seu primeiro nome" type="text"/>
+                    </div>
+
+                    {/* SOBRENOME */}
+                    <div className="w-full">
+                      <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Sobrenome</label>
+                      <input id="lastname" className="input_style" placeholder="Digite seu sobrenome" type="text"/>
+                    </div>
                   </div>
-                  <div>
-                    <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Sobrenome</label>
-                    <input id="lastname" className="input_style" placeholder="Digite seu sobrenome" type="text"/>
-                  </div>
+
+
+                  {/* EMAIL */}
                   <div>
                     <label className="text-xs font-semibold block mb-2" htmlFor="name">E-mail</label>
                     <input className="input_style" placeholder="Digite seu e-mail" type="email"/>
                   </div>
-              <div className="">
-                <div>
-                  <label className="text-xs font-semibold block mb-2" htmlFor="lastname">CEP</label>
-                  <input
-                    className="input_style"
-                    type="text"
-                    name="cep"
-                    placeholder="CEP"
-                    value={form.cep}
-                    onChange={handleChange}
-                    onBlur={handleCepBlur}
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Rua</label>
-                  <input
-                    className="input_style"
-                    type="text"
-                    name="rua"
-                    placeholder="Rua"
-                    value={form.rua}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div>
-                  <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Bairro</label>
-                  <input
-                    className="input_style"
-                    type="text"
-                    name="bairro"
-                    placeholder="Bairro"
-                    value={form.bairro}
-                    onChange={handleChange}
-                  />
-                </div>
-              </div>
-              <div>
-                <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Cidade</label>
-                <input
-                  className="input_style"
-                  type="text"
-                  name="cidade"
-                  placeholder="Cidade"
-                  value={form.cidade}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Estado</label>
-                <input
-                  className="input_style"
-                  type="text"
-                  name="estado"
-                  placeholder="Estado"
-                  value={form.estado}
-                  onChange={handleChange}
-                />
-              </div>
+                  
+                  {/* SERVIÇO DE INTERESSE */}
+                  <div>
+                    <label className="text-xs font-semibold block mb-2" htmlFor="name">Serviço de interesse</label>
+                    <select className="input_style" name="" id="" defaultValue="select_service">
+                      <option value="select_service" disabled>Selecione o serviço</option>
+                      <option value="">Iluminação inteligente</option>
+                      <option value="">Segurança e monitoramento</option>
+                      <option value="">Energia sustentável</option>
+                    </select>
+                  </div>
+                  
+                  {/* ENDEREÇO */}
+                  <div>
+                    <label className="text-xs font-semibold block mb-2" htmlFor="lastname">CEP</label>
+                    <input
+                      className="input_style"
+                      type="text"
+                      name="cep"
+                      placeholder="CEP"
+                      value={form.cep}
+                      onChange={handleChange}
+                      onBlur={handleCepBlur}
+                    />
+                  </div>
+                  <div className="flex gap-4 justify-between items-center">
+                    <div className="w-full">
+                      <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Rua</label>
+                      <input
+                        className="input_style"
+                        type="text"
+                        name="rua"
+                        placeholder="Rua"
+                        value={form.rua}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div className="w-full">
+                      <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Bairro</label>
+                      <input
+                        className="input_style"
+                        type="text"
+                        name="bairro"
+                        placeholder="Bairro"
+                        value={form.bairro}
+                        onChange={handleChange}
+                      />
+                    </div>
+                  </div>
+                  <div className="flex gap-4 justify-between items-center">
+                    <div>
+                      <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Cidade</label>
+                      <input
+                        className="input_style"
+                        type="text"
+                        name="cidade"
+                        placeholder="Cidade"
+                        value={form.cidade}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold block mb-2" htmlFor="lastname">Estado</label>
+                      <input
+                        className="input_style"
+                        type="text"
+                        name="estado"
+                        placeholder="Estado"
+                        value={form.estado}
+                        onChange={handleChange}
+                      />
+                    </div>
+                    <div>
+                      <label className="text-xs font-semibold block mb-2" htmlFor="numero">Número</label>
+                      <input
+                        className="input_style"
+                        type="text"
+                        name="numero"
+                        placeholder="Número"
+                      />
+                    </div>
+                  </div>
+
+                  {/* MENSAGEM */}
                   <div>
                     <label className="text-xs font-semibold block mb-2" htmlFor="message">Mensagem</label>
                     <textarea className="input_style py-3!" name="" id="message" rows={7} placeholder='Escreva sua mensagem aqui'></textarea>
                   </div>
                 </div>
+
+                {/* TERMOS */}
                 <div className="flex items-start gap-2 my-6">
                   <input type="checkbox" name="terms" id="terms" />
                   <label className='text-xs' htmlFor="terms">
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias ea qui aut esse illo cumque, eos vitae autem officiis tempore saepe ad quisquam omnis debitis et facilis, optio delectus? Natus!
+                      Li e concordo com os termos e condições do serviço, compreendendo que meus dados poderão ser utilizados para contato, envio de informações, ofertas personalizadas e melhorias no atendimento. Estou ciente de que posso solicitar a atualização ou exclusão dos meus dados a qualquer momento.
                   </label>
                 </div>
-                <button className="bg-(--color_primary) cursor-pointer rounded-lg py-3 px-6 text-sm text-white" type="submit">Enviar mensagem</button>
+                <button 
+                  className="bg-(--color_primary) cursor-pointer rounded-lg py-3 px-6 text-sm text-white" 
+                  type="submit"
+                >
+                  Enviar mensagem
+                </button>
               </Form>
             </div>
           </div>
-          <div className="basis-120 bg-sky-50 p-10 pb-16 rounded-4xl h-fit block">
+
+          {/* BOX WIDGETS */}
+          <div className="basis-120 border-t-5 border-(--color_secondary) p-8 pb-16 h-fit block md:border-l-5 md:border-t-0">
             <div className="mb-10">
-              <h3 className="text-xl font-medium mb-2">Get in touch</h3>
-              <p className='text-neutral-600 text-sm leading-6'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis, maxime ipsum necessitatibus</p>
+              <h3 className="text-xl font-medium mb-2">
+                Entre em contato
+              </h3>
+              <p className='text-neutral-600 text-sm leading-6'>
+                Fale conosco pelos canais abaixo e nossa equipe terá prazer em ajudar você a tornar sua casa mais conectada e segura.
+              </p>
             </div>
             <ul className='flex flex-wrap flex-col gap-10'>
               {/* ENDEREÇO */}

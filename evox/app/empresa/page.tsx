@@ -6,36 +6,42 @@ export default function Empresa() {
         <>
             <Breadcrumb 
                 title_page="Empresa"
-                banner="/assets/images/hero1.webp"
+                banner="/assets/images/empresa/banner_empresa.webp"
             />
             <div className="company py-20">
                 <div className="w_content flex flex-wrap gap-10">
-                    <div className="basis-150 overflow-hidden rounded-lg shadow-md">
-                        <Image src="/assets/images/hero1.webp" width={700} height={300} alt="teste" />
+                    <div className="relative basis-150 overflow-hidden w-full h-auto rounded-lg shadow-md">
+                        <Image className="object-cover" src="/assets/images/empresa/evox_company.webp" fill alt="Empresa"/>
                     </div>
                     <div className="basis-125">
                         <div className="flex items-center gap-5 text-sm text-(--color_primary) font-medium mb-3">
-                            <h3>Sobre nós</h3>
+                            <h3>Nossa história</h3>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-3">
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25" />
                             </svg>
                         </div>
-                        <h2 className="text-2xl font-semibold pr-60 mb-3">Adsa dasiasdas oiasjdasosda ada</h2>
+                        <h2 className="text-2xl font-semibold pr-40 mb-3">
+                            Transformando casas em lares inteligentes
+                        </h2>
                         <div className="flex flex-col gap-4 text-sm font-base text-neutral-600">
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni repellat iste obcaecati? Vitae aut in eos! Explicabo, facilis quam voluptatem optio, voluptates tenetur obcaecati quasi laborum nam, tempora possimus provident?
+                                Fundada há mais de 10 anos, nossa empresa nasceu do sonho de unir tecnologia e conforto no dia a dia das pessoas. Desde o primeiro projeto, nos dedicamos a criar soluções de automação residencial que tornam a vida mais prática, segura e conectada.
                             </p>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni repellat iste obcaecati? Vitae aut in eos! Explicabo, facilis quam voluptatem optio, voluptates tenetur obcaecati quasi laborum nam, tempora possimus provident?
+                                Começamos com pequenas instalações de iluminação inteligente e rapidamente expandimos para sistemas completos de segurança, climatização e entretenimento. 
+                                Cada projeto é personalizado, garantindo que cada lar seja único e que cada cliente tenha a melhor experiência possível.
+                            </p>
+                            <p>
+                                Hoje, somos referência no mercado de automação residencial, atendendo centenas de clientes e transformando casas comuns em ambientes inteligentes e cheios de tecnologia, sempre com compromisso com qualidade, inovação e satisfação.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
             <div className="mission bg-(--color_primary) text-white py-20">
-                <div className=" w_content flex flex-row-reverse flex-wrap gap-10">
-                    <div className="basis-150 overflow-hidden rounded-lg shadow-md">
-                        <Image src="/assets/images/hero1.webp" width={700} height={300} alt="teste" />
+                <div className="w_content flex flex-row-reverse flex-wrap gap-10">
+                    <div className="relative basis-150 overflow-hidden w-full h-80 rounded-lg shadow-md">
+                        <Image className="object-cover" src="/assets/images/empresa/missao.webp" fill alt="Empresa"/>
                     </div>
                     <div className="basis-125">
                         <div className="flex items-center gap-5 text-sm text-stone-300 font-medium mb-3">
@@ -44,13 +50,16 @@ export default function Empresa() {
                                 <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 4.5 15 15m0 0V8.25m0 11.25H8.25" />
                             </svg>
                         </div>
-                        <h2 className="text-2xl font-semibold pr-60 mb-3">Adsa dasiasdas oiasjdasosda ada</h2>
+                        <h2 className="text-2xl font-semibold pr-40 mb-3">
+                            Tornar a tecnologia acessível e prática para todos os lares
+                        </h2>
                         <div className="flex flex-col gap-4 text-sm font-light">
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni repellat iste obcaecati? Vitae aut in eos! Explicabo, facilis quam voluptatem optio, voluptates tenetur obcaecati quasi laborum nam, tempora possimus provident?
+                                Nossa missão é simplificar a vida das pessoas por meio da automação residencial, oferecendo soluções inteligentes que unem conforto, segurança e eficiência energética. 
+                                Queremos que cada cliente desfrute de um lar conectado, sem complicações.
                             </p>
                             <p>
-                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magni repellat iste obcaecati? Vitae aut in eos! Explicabo, facilis quam voluptatem optio, voluptates tenetur obcaecati quasi laborum nam, tempora possimus provident?
+                                Buscamos constantemente inovação e personalização em nossos projetos, garantindo que cada instalação seja adaptada às necessidades e estilo de vida de cada família, transformando casas comuns em ambientes verdadeiramente inteligentes.
                             </p>
                         </div>
                     </div>
@@ -65,53 +74,52 @@ export default function Empresa() {
                     <div className="justify-center w-full mx-auto items-center grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="grid gap-4">
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/home/iluminacao-inteligente.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial1.webp" alt=""/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial2.webp" alt=""/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
-                            </div>
-                        </div>
-                        <div className="grid gap-4">
-                            <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial3.webp" alt=""/>
                             </div>
                         </div>
                         <div className="grid gap-4">
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial4.webp" alt=""/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial5.webp" alt=""/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial6.webp" alt=""/>
                             </div>
                         </div>
                         <div className="grid gap-4">
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/sala-industrial-laje-aparente-espaco-de-espera.webp" alt=""/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/arquibancada-espaco-colaborativo.webp" alt=""/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/hero1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/sala-espera.webp" alt=""/>
+                            </div>
+
+                        </div>
+                        <div className="grid gap-4">
+                            <div className="flex items-center justify-center">
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/mesa-reunioes-madeira-macica-espaco-colaborativo.webp" alt=""/>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/divisorias-madeira-perfurada.webp" alt=""/>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/repcao-estilo-industrial.webp" alt=""/>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </>
     )
 }

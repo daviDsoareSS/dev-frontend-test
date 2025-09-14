@@ -1,8 +1,13 @@
+"use client";
+
 import Image from "next/image"
 import Link from "next/link"
 import { SITE_NAME } from "../utils/constants"
+import { usePathname } from "next/navigation"
 
 export default function Footer(){
+    const pathname = usePathname();
+
     return (
         <footer className="bg-slate-800">
             <div className="w_content p-4 py-6 lg:py-8">
@@ -12,7 +17,7 @@ export default function Footer(){
                         <Link href="" className="flex ">
                             <Image className="mb-5" src="/assets/images/logo_evox.webp" width={120} height={27} alt="Logo evox"/>
                         </Link>
-                        <p className="w-100 text-gray-500 dark:text-gray-400 font-medium">
+                        <p className="w-full md:w-100 text-gray-500 dark:text-gray-400 font-medium">
                             A Evox é especializada em automação residencial, transformando casas em lares inteligentes. Com tecnologia de ponta e soluções personalizadas, oferecemos controle de iluminação, climatização, segurança e entretenimento na palma da sua mão.
                         </p>
                     </div>
@@ -22,13 +27,13 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Links rápidos</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
-                                <Link href="/empresa" className="hover:underline">Empresa</Link>
+                                <Link href="/empresa" className={` ${pathname === '/empresa' ? 'underline' : ''} hover:underline`}>Empresa</Link>
                             </li>
                             <li className="mb-4">
-                                <Link href="/servicos" className="hover:underline">Serviços</Link>
+                                <Link href="/servicos" className={` ${pathname.includes('servicos') ? 'underline' : ''} hover:underline`}>Serviços</Link>
                             </li>
                             <li>
-                                <Link href="/contato" className="hover:underline">Contato</Link>
+                                <Link href="/contato" className={` ${pathname === '/contato' ? 'underline' : ''} hover:underline`}>Contato</Link>
                             </li>
                         </ul>
                     </div>
@@ -36,13 +41,28 @@ export default function Footer(){
                         <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Serviços</h2>
                         <ul className="text-gray-500 dark:text-gray-400 font-medium">
                             <li className="mb-4">
-                                <Link href="" className="hover:underline">Iluminação inteligente</Link>
+                                <Link 
+                                    href="/servicos/iluminacao-inteligente" 
+                                    className={` ${pathname.includes('iluminacao-inteligente') ? 'underline' : ''} hover:underline`}
+                                >
+                                    Iluminação inteligente
+                                </Link>
                             </li>
                             <li className="mb-4">
-                                <Link href="" className="hover:underline">Segurança e monitoramento</Link>
+                                <Link 
+                                    href="/servicos/seguranca-e-monitoramento" 
+                                    className={` ${pathname.includes('seguranca-e-monitoramento') ? 'underline' : ''} hover:underline`}
+                                >
+                                    Segurança e monitoramento
+                                </Link>
                             </li>
                             <li className="mb-4">
-                                <Link href="" className="hover:underline">Energia sustentável</Link>
+                                <Link 
+                                    href="/servicos/energia-sustentavel" 
+                                    className={` ${pathname.includes('energia-sustentavel') ? 'underline' : ''} hover:underline`}
+                                >
+                                    Energia sustentável
+                                </Link>
                             </li>
                         </ul>
                     </div>

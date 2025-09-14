@@ -1,30 +1,30 @@
-import { Metadata } from "next"
+"use client";
+
 import Breadcrumb from "../components/Breadcrumb"
-import { SITE_NAME } from "../utils/constants"
+import ServicesList from "../components/ServicesList"
+import { usePathname } from "next/navigation"
+import { links_services } from "../utils/services_links";
 
-export const metadata:Metadata = {
-  title: {
-    default: `Serviços`,
-    template: `%s / Serviços - ${SITE_NAME}`,
-    absolute: "",
-  },
+export default function ServicosLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const currentService = links_services.find(service => service.url === pathname);
 
-  description: "Automatize sua casa com tecnologia inteligente. Conforto, segurança e praticidade ao alcance de um toque."
-}
+  const banner = currentService ? currentService.banner : '/assets/images/servicos/banner_servicos.webp';
+  const title_page = currentService ? currentService.label : 'Serviços';
 
-export default function ServicosLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
   return (
     <>
       <Breadcrumb 
-        title_page="Serviços"
-        banner="/assets/images/hero1.webp"
+        title_page={title_page}
+        banner={banner}
       />
-      <div className="w_content py-20">
-        {children}
+      <div className="flex flex-col gap-10 justify-between w_content py-20 md:flex-row">
+        <div className={`pr-0 w-full ${pathname === '/servicos' ? 'w-full' : 'md:w-200'} md:pr-10`}>
+          {children}
+        </div>
+        { pathname === '/servicos' ? '' :
+          <ServicesList />
+        }
       </div>
     </>
   )
