@@ -9,7 +9,7 @@ export default function Footer(){
     const pathname = usePathname();
 
     return (
-        <footer className="bg-slate-800">
+        <footer className="bg-slate-800 py-10 md:py-5">
             <div className="w_content p-4 py-6 lg:py-8">
                 <div className="md:flex md:justify-start gap-20">
                 <div className="mb-6 md:mb-0">

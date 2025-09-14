@@ -14,7 +14,7 @@ export default function Breadcrumb ({ title_page, banner }:BreadcrumbProps){
 
     return(
         <div 
-            className={`flex flex-col gap-4 w-full h-80 bg-cover bg-center`}
+            className={`flex flex-col gap-4 w-full h-50 bg-cover bg-center md:h-80`}
             style={{ backgroundImage: `url(${banner})` }}
         >
             <div className="w_content flex h-full justify-center items-center">

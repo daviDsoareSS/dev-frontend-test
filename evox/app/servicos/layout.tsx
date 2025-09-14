@@ -18,8 +18,8 @@ export default function ServicosLayout({ children }: { children: React.ReactNode
         title_page={title_page}
         banner={banner}
       />
-      <div className="flex flex-col gap-10 justify-between w_content py-20 md:flex-row">
-        <div className={`pr-0 w-full ${pathname === '/servicos' ? 'w-full' : 'md:w-200'} md:pr-10`}>
+      <div className="flex flex-col gap-20 justify-between items-center sm:items-start w_content py-10 lg:flex-row md:gap-10 md:py-20">
+        <div className={`pr-0 w-full ${pathname === '/servicos' ? 'w-full' : 'lg:w-200'} lg:pr-10`}>
           {children}
         </div>
         { pathname === '/servicos' ? '' :

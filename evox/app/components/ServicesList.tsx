@@ -13,7 +13,7 @@ export default function ServicesList() {
     ];
 
     return (
-        <div className="sticky top-40 h-full services_list basis-1/3">
+        <div className="sticky top-40 h-full w-[100%] services_list sm:basis-1/3">
             <h4 className="text-2xl font-semibold mb-4">Nossos serviços</h4>
             <ul className="flex flex-col gap-3">
                 { links_services.map(({ href, label }) => (

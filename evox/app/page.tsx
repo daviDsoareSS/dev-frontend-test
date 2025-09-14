@@ -14,19 +14,19 @@ export default function Home() {
   return (
     <div className='w-full h-full text-white'>
       {/* HERO */}
-      <div className="relative hero w-full h-[100dvh] md:h-200 bg-cover bg-center" style={{ backgroundImage: `url(/assets/images/home/hero1.webp)` }}>
+      <div className="relative hero w-full h-[90dvh] sm:h-200 bg-cover bg-center" style={{ backgroundImage: `url(/assets/images/home/hero1.webp)` }}>
         <div className="w_content">
-          <div className="text absolute z-1 top-1/2  left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-4 md:px-0 md:left-[inherit] md:translate-x-0 md:-translate-y-1/2">
-            <h1 className='text-2xl md:text-5xl font-bold mb-3 text-shadow-md'>
-              Soluções inteligentes para <br/>todas as áreas da sua casa
+          <div className="text absolute z-1 top-1/2  left-1/2 -translate-x-1/2 -translate-y-[40%] w-full px-4 sm:px-0 sm:left-[inherit] sm:w-[fit-content] sm:translate-x-0 sm:-translate-y-1/2">
+            <h1 className='text-3xl font-bold w-full mb-3 text-shadow-md sm:text-5xl sm:w-170'>
+              Soluções inteligentes para todas as áreas da sua casa
             </h1>
-            <p className='mb-5 w-full md:w-160 text-sm text-shadow-md'>
+            <p className='mb-5 w-full sm:w-160 text-sm text-shadow-md'>
               Transforme sua residência em um ambiente conectado, seguro e eficiente, com tecnologia que facilita sua rotina e garante conforto em cada detalhe.
             </p>
-            <div className="buttons_cta text-sm flex flex-col md:flex-row gap-5">
+            <div className="buttons_cta text-sm flex flex-col sm:flex-row gap-5">
               <Link 
                 href="/empresa"
-                className="w-full justify-center rounded-sm flex items-center gap-1 pl-6 pr-6 pt-4 pb-4 bg-(--color_primary) text-white shadow-md md:w-fit"
+                className="w-full font-semibold justify-center rounded-sm flex items-center gap-1 pl-6 pr-6 pt-4 pb-4 bg-(--color_primary) text-white shadow-md md:w-fit"
               >
                 <span>Conheça nossa história</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
@@ -36,7 +36,7 @@ export default function Home() {
 
               <Link
                 href="/servicos" 
-                className="w-full justify-center rounded-sm flex items-center gap-1 text-sm pl-6 pr-6 pt-4 pb-4 bg-white text-black shadow-md md:w-fit"
+                className="w-full font-semibold justify-center rounded-sm flex items-center gap-1 text-sm pl-6 pr-6 pt-4 pb-4 bg-white text-black shadow-md md:w-fit"
               >
                 <span>Ver serviços</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
@@ -49,17 +49,17 @@ export default function Home() {
       </div>
       
       {/* SEÇÃO DE SERVIÇOS */}
-      <section className="services text-black py-20">
+      <section className="services text-black py-10 md:py-20">
         <div className="w_content">
           <div className="text_introduction mb-13 mx-auto text-center w-full md:w-190">
             <p className="text-sm text-neutral-600 mb-3">
               Solicite seu serviço agora e transforme suas ideias em resultados!
             </p>
-            <h2 className="text-3xl font-bold text-gray-800 mb-6 px-0 md:px-15 md:text-4xl">
+            <h2 className="text-2xl font-bold text-gray-800 mb-6 px-0 md:px-15 md:text-4xl">
               Serviços sob medida com qualidade e dedicação.
             </h2>
           </div>
-          <div className="flex justify-between flex-wrap w-full gap-x-10 gap-y-10 row-10 text-white mb-10">
+          <div className="flex flex-col w-full items-center gap-x-10 gap-y-10 row-10 text-white mb-10 md:justify-between lg:flex-row">
             <ServiceCard
               href="/servicos/iluminacao-inteligente"
               title="Iluminação inteligente"
@@ -79,12 +79,12 @@ export default function Home() {
               image="/assets/images/home/energia-sustentavel.webp"
             />
           </div>
-          <div className="flex flex-col md:flex-row justify-between  md:items-center">
-            <p className="text-sm text-gray-600 w-full mb-4 md:mb-0 md:w-230">
+          <div className="flex flex-col md:gap-10 md:flex-row justify-between md:items-center">
+            <p className="text-sm text-gray-600 flex mb-5 md:mb-0">
               Transforme seu ambiente com tecnologia, segurança e sustentabilidade! Entre em contato conosco e receba atendimento personalizado para encontrar as melhores soluções para sua casa ou empresa. Nossa equipe está pronta para ajudá-lo a criar um espaço mais moderno, eficiente e confortável.
             </p>
             <Link 
-              className="rounded-lg bg-(--color_primary) text-sm font-semibold text-white pl-5 pr-5 pt-4 pb-4 hover:brightness-120 transition-all duration-600 ease-out text-center mb:text-left" 
+              className="text-center rounded-lg bg-(--color_primary) text-sm font-semibold text-white pl-5 pr-5 pt-4 pb-4 transition-all duration-600 ease-out hover:brightness-120 md:w-100 md:text-nowrap" 
               href="/contato">
               Solicitar orçamento
             </Link>
@@ -93,12 +93,12 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO DE DEPOIMENTOS */}
-      <section className="bg-slate-800">
+      <section className="bg-slate-800 py-10 md:py-20">
         <div className="w_content">
-          <div className="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-6">
-            <div className="mx-auto max-w-screen-sm">
+          <div className="pb-8 px-0 mx-auto max-w-screen-xl text-center lg:pb-0 lg:px-6">
+            <div className="mx-auto max-w-screen-sm mb-16 lg:mb-16">
                 <h2 className="mb-4 text-4xl font-semibold text-white">Depoimentos</h2>
-                <p className="mb-4 font-light text-stone-300 lg:mb-16 sm:text-sm">
+                <p className="mb-4 font-light text-stone-300 sm:text-sm">
                   A melhor prova da qualidade do nosso trabalho está na voz de quem já confiou em nós. Veja o que nossos clientes têm a dizer.
                 </p>
             </div> 
@@ -124,7 +124,7 @@ export default function Home() {
                 },
               }}
               modules={[Pagination, Autoplay]} 
-              className="mySwiper py-100"
+              className="mySwiper"
             >
               {testimonials.map(({ name, city, image, text }, index) => (
                 <SwiperSlide key={index}>
@@ -163,7 +163,7 @@ export default function Home() {
       </section>
 
       {/* SEÇÃO SOBRE A EMPRESA */}
-      <section className="about bg-neutral-200 text-black py-20">
+      <section className="about bg-neutral-200 text-black py-10 md:py-20">
         <div className="w_content">
           <div className="flex flex-col md:flex-row items-center justify-between gap-10">
             <div className="w-full md:w-145">
@@ -181,7 +181,7 @@ export default function Home() {
               </div>
 
               <div className="flex flex-wrap justify-between gap-4">
-                <div className='basis-1/1  border-t-3 border-(--color_secondary) pt-3 pb-4 pr-3 md:basis-65'>
+                <div className='basis-auto border-t-3 border-(--color_secondary) w-full pt-3 pb-4 pr-0 md:pr-3 sm:basis-[45%] lg:basis-65'>
                   <h3 className='text-2xl font-semibold mb-2'>
                     +10 anos
                   </h3>
@@ -189,7 +189,7 @@ export default function Home() {
                     de experiência em automação residencial, garantindo soluções confiáveis.
                   </p>
                 </div>
-                <div className='basis-1/1 border-t-3 border-(--color_secondary) pt-3 pb-4 pr-3 md:basis-65'>
+                <div className='basis-auto border-t-3 border-(--color_secondary) pt-3 pb-4 pr-0 md:pr-3 sm:basis-[45%] lg:basis-65 '>
                   <h3 className='text-2xl font-semibold mb-2'>
                     +500 projetos
                   </h3>
@@ -197,7 +197,7 @@ export default function Home() {
                     implementados em residências e apartamentos inteligentes em todo o país.
                   </p>
                 </div>
-                <div className='basis-1/1 border-t-3 border-(--color_secondary) pt-3 pb-4 pr-3 md:basis-65'>
+                <div className='basis-auto border-t-3 border-(--color_secondary) pt-3 pb-4 pr-0 md:pr-3 sm:basis-[45%] lg:basis-65 '>
                   <h3 className='text-2xl font-semibold mb-2'>
                     100% personalizado
                   </h3>
@@ -205,7 +205,7 @@ export default function Home() {
                     Cada projeto é adaptado às necessidades e estilo de vida dos nossos clientes.
                   </p>
                 </div>
-                <div className='basis-1/1 border-t-3 border-(--color_secondary) pt-3 pb-4 pr-3 md:basis-65'>
+                <div className='basis-[100%] border-t-3 border-(--color_secondary) pt-3 pb-4 pr-0 md:pr-3 sm:basis-[45%] lg:basis-65 '>
                   <h3 className='text-2xl font-semibold mb-2'>
                     Suporte contínuo
                   </h3>
@@ -215,7 +215,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="w-full md:w-120 h-140 rounded-lg overflow-hidden relative">
+            <div className="w-full h-100 rounded-lg overflow-hidden relative sm:w-120 sm:h-140">
               <Image 
                 className='object-cover' 
                 src="/assets/images/home/conversando_com_cliente.webp" 

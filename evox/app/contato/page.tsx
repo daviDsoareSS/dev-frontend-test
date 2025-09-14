@@ -49,7 +49,7 @@ export default function Contato() {
           title_page="Contato"
           banner="/assets/images/contato/banner_contato.webp"
         />
-        <div className="contact py-20 w_content flex flex-col gap-10 justify-between md:flex-row">
+        <div className="contact py-10 w_content flex flex-col gap-10 justify-between md:flex-row md:py-20">
           <div className="basis-1/1 md:basis-140">
             <div className="mb-4">
               <h2 className="mb-4 text-2xl font-semibold">
@@ -188,7 +188,7 @@ export default function Contato() {
           </div>
 
           {/* BOX WIDGETS */}
-          <div className="basis-120 border-t-5 border-(--color_secondary) p-8 pb-16 h-fit block md:border-l-5 md:border-t-0">
+          <div className="basis-120 border-t-5 border-(--color_secondary) py-8 pb-16 h-fit block md:border-l-5 md:border-t-0 md:p-8">
             <div className="mb-10">
               <h3 className="text-xl font-medium mb-2">
                 Entre em contato

@@ -5,7 +5,7 @@ export default function Page() {
     return (
         <>
             <div className="max-w-3xl mx-auto mb-16">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                <h2 className="text-2xl md:text-5xl font-bold text-gray-800 mb-6 md:text-4xl">
                     Iluminação Inteligente
                 </h2>
                 <div className="flex flex-col gap-5">
