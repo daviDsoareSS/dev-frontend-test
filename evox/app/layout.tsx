@@ -46,6 +46,9 @@ export const metadata:Metadata = {
         "application-name": `${SITE_NAME}`,
         "content-language": "pt-BR",
     },
+    alternates: {
+        canonical: "/",
+    },
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode;}>) 

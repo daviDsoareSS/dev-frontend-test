@@ -29,6 +29,9 @@ export const metadata:Metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: "/contato",
+    },
 }
 
 export default function Contato() {

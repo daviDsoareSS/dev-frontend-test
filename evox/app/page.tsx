@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <div className='w-full h-full text-white'>
       {/* HERO */}
-      <div className="relative hero w-full h-[90dvh] sm:h-200 bg-cover bg-center" style={{ backgroundImage: `url(/assets/images/home/hero1.webp)` }}>
+      <div className="relative hero w-full h-[90dvh] bg-cover bg-center sm:h-200" style={{ backgroundImage: `url(/assets/images/home/hero1.webp)` }}>
         <div className="w_content">
           <div className="text absolute z-1 top-1/2  left-1/2 -translate-x-1/2 -translate-y-[40%] w-full px-4 sm:px-0 sm:left-[inherit] sm:w-[fit-content] sm:translate-x-0 sm:-translate-y-1/2">
             <h1 className='text-3xl font-bold w-full mb-3 text-shadow-md sm:text-5xl sm:w-170'>
@@ -25,8 +25,9 @@ export default function Home() {
             </p>
             <div className="buttons_cta text-sm flex flex-col sm:flex-row gap-5">
               <Link 
+                aria-label="Conheça nossa história"
                 href="/empresa"
-                className="w-full font-semibold justify-center rounded-sm flex items-center gap-1 pl-6 pr-6 pt-4 pb-4 bg-(--color_primary) text-white shadow-md md:w-fit"
+                className="w-full font-semibold justify-center rounded-sm flex items-center gap-1 pl-6 pr-6 pt-4 pb-4 bg-(--color_primary) text-white shadow-md transition-all duration-600 ease-out hover:brightness-120 md:w-fit"
               >
                 <span>Conheça nossa história</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
@@ -35,13 +36,23 @@ export default function Home() {
               </Link>
 
               <Link
-                href="/servicos" 
-                className="w-full font-semibold justify-center rounded-sm flex items-center gap-1 text-sm pl-6 pr-6 pt-4 pb-4 bg-white text-black shadow-md md:w-fit"
+                aria-label="Ver serviços"
+                href="/servicos"
+                className="relative w-full md:w-fit font-semibold justify-center rounded-sm flex items-center gap-1 text-sm pl-6 pr-6 pt-4 pb-4 bg-white text-black shadow-md overflow-hidden group"
               >
-                <span>Ver serviços</span>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
+                <span className="relative z-10">
+                  Ver serviços
+                </span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"
+                  className="size-4 relative z-10"
+                >
                   <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
                 </svg>
+
+                <span
+                  className="bg-(--color_secondary) absolute left-0 top-0 h-full w-0 transition-all duration-500 ease-out group-hover:w-full"
+                />
               </Link>
             </div>
           </div>
@@ -85,7 +96,9 @@ export default function Home() {
             </p>
             <Link 
               className="text-center rounded-lg bg-(--color_primary) text-sm font-semibold text-white pl-5 pr-5 pt-4 pb-4 transition-all duration-600 ease-out hover:brightness-120 md:w-100 md:text-nowrap" 
-              href="/contato">
+              href="/contato"
+              aria-label="Solicitar orçamento"
+            >
               Solicitar orçamento
             </Link>
           </div>
@@ -165,10 +178,10 @@ export default function Home() {
       {/* SEÇÃO SOBRE A EMPRESA */}
       <section className="about bg-neutral-200 text-black py-10 md:py-20">
         <div className="w_content">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-10">
+          <div className="flex flex-col items-center justify-between mb-5 gap-10 md:flex-row">
             <div className="w-full md:w-145">
               <div className="mb-13">
-                <h4 className="mb-4 text-neutral-600">
+                <h4 className="mb-4 text-sm text-neutral-600">
                   Nos conheça melhor
                 </h4>
                 <h2 className="text-3xl font-bold mb-4 md:text-4xl">
@@ -224,6 +237,13 @@ export default function Home() {
               />
             </div>
           </div>
+            <Link 
+              className="text-center rounded-lg bg-(--color_primary) text-sm font-semibold text-white pl-5 pr-5 pt-4 pb-4 transition-all duration-600 ease-out hover:brightness-120 md:w-100 md:text-nowrap" 
+              href="/empresa"
+              aria-label="Conhecer a empresa"
+            >
+              Conhecer a empresa
+            </Link>
         </div>
       </section>
     </div>

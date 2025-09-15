@@ -29,6 +29,9 @@ export const metadata:Metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: "/empresa",
+    },
 }
 
 export default function Empresa() {
@@ -41,7 +44,7 @@ export default function Empresa() {
             <div className="company py-10 md:py-20">
                 <div className="w_content flex flex-col-reverse gap-10 md:flex-row">
                     <div className="relative basis-auto overflow-hidden w-full h-70 rounded-lg shadow-md md:h-auto md:basis-150">
-                        <Image className="object-cover" src="/assets/images/empresa/evox_company.webp" fill alt="Empresa"/>
+                        <Image fetchPriority="high" className="object-cover" src="/assets/images/empresa/evox_company.webp" fill alt="Nossa empresa"/>
                     </div>
                     <div className="basis-1/1 md:basis-125">
                         <div className="flex items-center gap-5 text-sm text-(--color_primary) font-medium mb-3">
@@ -71,7 +74,7 @@ export default function Empresa() {
             <div className="mission bg-(--color_primary) text-white py-10 md:py-20">
                 <div className="w_content flex flex-col-reverse gap-10 md:flex-row-reverse">
                     <div className="relative basis-auto overflow-hidden w-full h-50 rounded-lg shadow-md md:h-auto md:basis-150">
-                        <Image className="object-cover" src="/assets/images/empresa/missao.webp" fill alt="Empresa"/>
+                        <Image className="object-cover" src="/assets/images/empresa/missao.webp" fill alt="Nossa missão"/>
                     </div>
                     <div className="basis-1/1 md:basis-125">
                         <div className="flex items-center gap-5 text-sm text-stone-300 font-medium mb-3">
@@ -104,47 +107,47 @@ export default function Empresa() {
                     <div className="justify-center w-full mx-auto items-center grid grid-cols-2 md:grid-cols-4 gap-4">
                         <div className="grid gap-4">
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial1.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial1.webp" alt="Áreas de trabalho estilo industrial 1"/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial2.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial2.webp" alt="Áreas de trabalho estilo industrial 2"/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial3.webp" alt=""/>
-                            </div>
-                        </div>
-                        <div className="grid gap-4">
-                            <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial4.webp" alt=""/>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial5.webp" alt=""/>
-                            </div>
-                            <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial6.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial3.webp" alt="Áreas de trabalho estilo industrial 3"/>
                             </div>
                         </div>
                         <div className="grid gap-4">
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/sala-industrial-laje-aparente-espaco-de-espera.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial4.webp" alt="Áreas de trabalho estilo industrial 4"/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/arquibancada-espaco-colaborativo.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial5.webp" alt="Áreas de trabalho estilo industrial 5"/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/sala-espera.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/areas-de-trabalho-estilo-industrial6.webp" alt="Áreas de trabalho estilo industrial 6"/>
+                            </div>
+                        </div>
+                        <div className="grid gap-4">
+                            <div className="flex items-center justify-center">
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/sala-industrial-laje-aparente-espaco-de-espera.webp" alt="Sala industrial com laje aparente"/>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/arquibancada-espaco-colaborativo.webp" alt="Arquibancada com espaço colaborativo"/>
+                            </div>
+                            <div className="flex items-center justify-center">
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/sala-espera.webp" alt="Sala de espera"/>
                             </div>
 
                         </div>
                         <div className="grid gap-4">
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/mesa-reunioes-madeira-macica-espaco-colaborativo.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/mesa-reunioes-madeira-macica-espaco-colaborativo.webp" alt="Mesa de reuniões de madeira maciça"/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/divisorias-madeira-perfurada.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/divisorias-madeira-perfurada.webp" alt="Divisões de madeira perfurada"/>
                             </div>
                             <div className="flex items-center justify-center">
-                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/repcao-estilo-industrial.webp" alt=""/>
+                                <Image width={280} height={280} className="h-auto max-w-full rounded-lg" src="/assets/images/empresa/estrutura/repcao-estilo-industrial.webp" alt="Recepção estilo industrial"/>
                             </div>
                         </div>
                     </div>

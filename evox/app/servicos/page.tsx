@@ -28,6 +28,9 @@ export const metadata:Metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: "/servicos",
+    },
 }
 
 export default function Servicos(){

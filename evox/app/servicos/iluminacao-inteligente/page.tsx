@@ -29,6 +29,9 @@ export const metadata:Metadata = {
             },
         ],
     },
+    alternates: {
+        canonical: "/servicos/iluminacao-inteligente",
+    },
 }
 
 export default function Page() {
@@ -36,7 +39,7 @@ export default function Page() {
         <>
             <div className="max-w-3xl mx-auto mb-16">
                 <h2 className="text-2xl font-bold text-gray-800 mb-6 md:text-5xl ">
-                    Iluminação Inteligente
+                    Iluminação inteligente
                 </h2>
                 <div className="flex flex-col gap-5">
                     <p className="text-sm text-gray-600 leading-relaxed">
@@ -85,54 +88,54 @@ export default function Page() {
 
             <div className="mb-20">
                 <h3 className="text-xl font-semibold mb-8 border-l-5 border-(--color_secondary) pl-2">
-                    Exemplos de ambientes com Iluminação Inteligente
+                    Exemplos de ambientes com iluminação inteligente
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-auto gap-6">
                     <div className="flex items-center justify-center">
                         <Image 
                             src="/assets/images/servicos/iluminacao-inteligente/cozinha.webp"
                             alt="Cozinha com iluminação inteligente"
-                            className="h-auto max-w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                            className="h-auto max-w-full rounded-xl shadow-lg"
                             width={280} height={280}
                         />
                     </div>
                     <div className="flex items-center justify-center">
                         <Image 
                             src="/assets/images/servicos/iluminacao-inteligente/dormitorio-quarto-hospedes.webp"
-                            alt="Cozinha com iluminação inteligente"
-                            className="h-auto max-w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                            alt="Dormitório quarto de hóspedes"
+                            className="h-auto max-w-full rounded-xl shadow-lg"
                             width={280} height={280}
                         />
                     </div>
                     <div className="flex items-center justify-center">
                         <Image 
                             src="/assets/images/servicos/iluminacao-inteligente/quarto-dormitorio-suite-casal.webp"
-                            alt="Cozinha com iluminação inteligente"
-                            className="h-auto max-w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                            alt="Quarto dormitório suíte de casal"
+                            className="h-auto max-w-full rounded-xl shadow-lg"
                             width={280} height={280}
                         />
                     </div>
                     <div className="flex items-center justify-center">
                         <Image 
                             src="/assets/images/servicos/iluminacao-inteligente/quarto-filhos.webp"
-                            alt="Cozinha com iluminação inteligente"
-                            className="h-auto max-w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                            alt="Quarto filhos"
+                            className="h-auto max-w-full rounded-xl shadow-lg"
                             width={280} height={280}
                         />
                     </div>
                     <div className="flex items-center justify-center">
                         <Image 
                             src="/assets/images/servicos/iluminacao-inteligente/sala-estar-integrada-com-jantar.webp"
-                            alt="Cozinha com iluminação inteligente"
-                            className="h-auto max-w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                            alt="Sala de estar integrada com jantar"
+                            className="h-auto max-w-full rounded-xl shadow-lg"
                             width={280} height={280}
                         />
                     </div>
                     <div className="flex items-center justify-center">
                         <Image 
                             src="/assets/images/servicos/iluminacao-inteligente/sala-estar-rack-estante-madeira-tapete-colorido.webp"
-                            alt="Cozinha com iluminação inteligente"
-                            className="h-auto max-w-full rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                            alt="Sala de estar com estante de madeira"
+                            className="h-auto max-w-full rounded-xl shadow-lg"
                             width={280} height={280}
                         />
                     </div>
@@ -149,6 +152,7 @@ export default function Page() {
                 </p>
                 <Link 
                     href="/contato" 
+                    aria-label="Solicitar orçamento"
                     className="bg-(--color_primary) cursor-pointer rounded-lg py-3 px-6 text-sm text-white md:px-8 md:py-3"
                 >
                     Solicitar orçamento

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { whatsapp } from "../utils/constants";
+import { SITE_NAME, whatsapp } from "../utils/constants";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -40,8 +40,8 @@ export default function Navbar(){
             <div className="w_content">
                 <div className="wrapper flex justify-between items-center w-full h-20">
                     <div className="logo">
-                        <Link href="/">
-                            <Image src="/assets/images/logo_evox.webp" width={120} height={27} alt="Logo evox"/>
+                        <Link href="/" aria-label="Ir para a página inicial">
+                            <Image src="/assets/images/logo_evox.webp" width={120} height={27} alt={`Logo - ${SITE_NAME}`}/>
                         </Link>
                     </div>
                     <ul 
@@ -51,7 +51,12 @@ export default function Navbar(){
                         `}
                     >
                         <li className="group relative">
-                            <Link className="relative pb-3 md:pb-8" href="/empresa">Empresa
+                            <Link 
+                                className="relative pb-3 md:pb-8" 
+                                href="/empresa"
+                                aria-label="Empresa"
+                            >
+                                Empresa
                                 <span 
                                     className={`line left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300 pointer-events-none ease-in-out ${pathname == '/empresa' ? 'w-full' : 'w-0'} group-hover:w-20`}
                                 ></span>
@@ -79,6 +84,7 @@ export default function Navbar(){
                                             : 'text-white md:text-neutral-600'
                                         } hover:text-(--color_primary) transition-all duration-200 ease-in-out`}
                                         href="/servicos/iluminacao-inteligente"
+                                        aria-label="Iluminação inteligente"
                                         >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 0 0 1.5-.189m-1.5.189a6.01 6.01 0 0 1-1.5-.189m3.75 7.478a12.06 12.06 0 0 1-4.5 0m3.75 2.383a14.406 14.406 0 0 1-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 1 0-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
@@ -93,6 +99,7 @@ export default function Navbar(){
                                             : 'text-white md:text-neutral-600'
                                         } hover:text-(--color_primary) transition-all duration-200 ease-in-out`} 
                                         href="/servicos/seguranca-e-monitoramento"
+                                        aria-label="Segurança e monitoramento"
                                         >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="m15.75 10.5 4.72-4.72a.75.75 0 0 1 1.28.53v11.38a.75.75 0 0 1-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25h-9A2.25 2.25 0 0 0 2.25 7.5v9a2.25 2.25 0 0 0 2.25 2.25Z" />
@@ -107,6 +114,7 @@ export default function Navbar(){
                                             : 'text-white md:text-neutral-600'
                                         } hover:text-(--color_primary) transition-all duration-200 ease-in-out`} 
                                         href="/servicos/energia-sustentavel"
+                                        aria-label="Energia sustentável"
                                         >
                                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />
@@ -117,7 +125,11 @@ export default function Navbar(){
                             </div>
                         </li>
                         <li className="relative group">
-                            <Link className="relative pb-3 md:pb-8" href="/contato">
+                            <Link 
+                                className="relative pb-3 md:pb-8" 
+                                href="/contato"
+                                aria-label="Contato"
+                            >
                                 Contato  
                                 <span 
                                     className={`line left-1/2 -translate-x-1/2 h-1 bg-(--color_secondary) block absolute bottom-0 transition-all duration-300 pointer-events-none ease-in-out ${pathname == '/contato' ? 'w-full' : 'w-0'} group-hover:w-20`}
@@ -129,12 +141,16 @@ export default function Navbar(){
                     <Link 
                         href={whatsapp}
                         target="_blank" 
-                        className="hidden rounded-sm items-center gap-2 text-sm font-semibold bg-white text-black pl-5 pr-5 pt-3 pb-3 md:inline-flex"
+                        arial-label="Fale com especialista"
+                        className="relative hidden md:inline-flex items-center gap-2 rounded-sm text-sm font-semibold bg-white text-black pl-5 pr-5 pt-3 pb-3 overflow-hidden group"
                     >
-                        <span>Fale com especialista</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-4">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                        <span className="relative z-10 transition-colors duration-500 group-hover:text-white">Fale com especialista</span>
+                        <svg className="z-10 relative size-4 transition-colors duration-500 group-hover:text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                         </svg>
+                        <span
+                            className="absolute left-0 top-0 h-full w-0 bg-green-500 transition-all duration-500 ease-out group-hover:w-full"
+                        />
                     </Link>
 
                     <button 

@@ -15,12 +15,13 @@ export default function ServiceCard({ title, description, href, image }: Service
       className="rounded-lg group relative flex items-end w-full h-120 bg-black overflow-hidden pl-5 pt-5 pb-5 pr-30 
       before:content-[''] before:absolute before:bottom-0 before:left-0 before:w-full before:h-full before:z-[2] 
       before:inset-0 before:bg-gradient-to-t before:from-[#035f8a] before:to-[rgba(253,187,45,0)] sm:w-110 lg:w-full lg:h-130"
+      aria-label={`Ir para o serviço: ${title}`}
     >
       <Image
         className="absolute pointer-events-none z-[1] top-1/2 left-1/2 object-cover"
         src={image}
-        fill
         alt={title}
+        fill
       />
       <div className="relative z-[2]">
         <h3 className="text-xl min-h-7 font-bold transition-all duration-500 ease-in-out">

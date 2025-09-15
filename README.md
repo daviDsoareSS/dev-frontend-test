@@ -1,66 +1,48 @@
-# 🚀 Desafio Técnico – Desenvolvedor(a) Frontend Bloomin
+# Evox Tecnologia que acolhe (automação residencial)
+---
+**Stack escolhida:** Next.js + Tailwind CSS
 
-## 📌 Descrição
-Você deve desenvolver um **site institucional** para uma empresa fictícia do **ramo industrial**.  
-
-O site deve conter **4 páginas obrigatórias**:  
-- Home  
-- Empresa  
-- Produtos ou Serviços  
-- Contato  
+Justificativa: Decidi desenvolver meu projeto em **Next.js** devido à familiaridade que tenho com o framework e à sua eficiência na manipulação de SEO e pré-rendering de páginas. Além disso, utilizei a oportunidade para aprofundar meus conhecimentos em **Tailwind** na questão da responsividade.
 
 ---
+## Instruções para instalação/execução
 
-## 🔧 Tecnologias
-Escolha **uma** das stacks abaixo:
+Primeiramente muito obrigado pela oportunidade de estar participando desse processo seletivo, agradeço desde já.
 
-- **Opção A:** PHP + Bootstrap + **Sass**  
-- **Opção B:** Next.js + **Tailwind CSS**  
+Para iniciar clone o projeto na sua máquina e abra ele com algum editor de código de sua preferência. Em seguida digite no terminal:
 
-⚠️ O uso de **Sass** ou **Tailwind** é **obrigatório**.
+```bash
+cd evox
+```
+Depois
 
----
+```bash
+npm run dev
+# ou
+yarn dev
+# ou
+pnpm dev
+# ou
+bun dev
+```
+obs.: Caso dê algum erro relacionado ao npm, digite no terminal: **node install**.
 
-## 📌 Requisitos Obrigatórios
-- Criar as 4 páginas descritas.  
-- Aplicar **SEO técnico** em todas as páginas.  
-- Estrutura **responsiva** e bem organizada.
-- Boas práticas de acessibilidade.  
-- Uso de componentes reutilizáveis (navbar, footer, cards, etc).
-
----
-
-## ⭐ Diferenciais (opcionais)
-- Uso de uma **API externa**:
-  - **API de CEP** → preencher automaticamente os campos de endereço no formulário de contato.  
-  - **API de Blog/Notícias** → exibir posts em uma seção da Home.    
-
----
-
-## 📂 Entrega
-1. Faça um **fork deste repositório**.  
-2. Desenvolva seu projeto dentro do fork.  
-3. Crie um **novo arquivo README.md no seu repositório** contendo:
-   - Stack escolhida e justificativa.  
-   - Instruções de instalação/execução.  
-   - Principais práticas de SEO aplicadas.  
-   - Se usou API: qual e como foi integrada.  
-   - (Opcional) link de deploy, se quiser publicar.  
-4. Ao finalizar, **envie o link do seu repositório no GitHub**.  
-
-> ⚠️ **Não é necessário subir o site em produção.**  
-> Apenas o código e o README novo serão avaliados.  
+Logo em seguida acesse o link: http://localhost:3000
 
 ---
+## Principais práticas de SEO aplicadas
 
-## ⏰ Prazo de Entrega
-Segunda-feira, **dia 15/09, até às 10h da manhã**.  
+- Meta title e description;
+- Open graph e Twitter cards;
+- Link canonical;
+- Sitemap;
+- Uso de h1, h2, h3;
+- Textos alternativos em imagens e links;
+- Responsividade;
 
 ---
+## API Utilizada (ViaCep)
 
-## ✅ Avaliação
-- **Frontend** → organização, semântica, responsividade, SEO técnico.  
-- **Código e organização** → estrutura do projeto, clareza no uso de Sass/Tailwind, versionamento.  
-- **Extras** → API, acessibilidade, design diferenciado.  
+Foi utilizado o hook do React chamado **useState** para controlar o estado do formulário e do valor do CEP. Criei uma função **formatCep** para padronizar o CEP no formato XXXXX-XXX. No evento **onChange** do input, formatei o CEP e, quando ele atinge 8 dígitos, faço uma requisição GET para a API do ViaCEP usando **Axios**. Se o retorno não contém erro, atualizo os campos do formulário (rua, bairro, cidade, estado) com os dados recebidos. Caso o CEP não seja encontrado, é exibido um alerta.
 
-## Boa Sorte! 🍀
+---

@@ -1,11 +1,12 @@
 import Link from "next/link";
-import { whatsapp } from "../utils/constants";
+import { phone, whatsapp } from "../utils/constants";
 
 export default function WhatsappFloat() {
     return(
         <Link 
             href={whatsapp} 
             target="_blank"
+            aria-label={`Ligar para ${phone}`}
             className="z-10 fixed bottom-30 right-4 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg flex items-center justify-center transition-colors md:right-10">
             <svg 
                 className="fill-white" 
