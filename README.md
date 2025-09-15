@@ -7,7 +7,7 @@ Justificativa: Decidi desenvolver meu projeto em **Next.js** devido à familiari
 ---
 ## Instruções para instalação/execução
 
-Primeiramente muito obrigado pela oportunidade de estar participando desse processo seletivo, agradeço desde já.
+Primeiramente muito obrigado pela oportunidade de estar participando desse processo seletivo, agradeço desde já 💗
 
 Para iniciar clone o projeto na sua máquina e abra ele com algum editor de código de sua preferência. Em seguida digite no terminal:
 
