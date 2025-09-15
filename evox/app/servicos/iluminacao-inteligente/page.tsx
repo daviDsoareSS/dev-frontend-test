@@ -1,11 +1,41 @@
+import { SITE_NAME } from "@/app/utils/constants"
+import { Metadata } from "next"
 import Image from "next/image"
 import Link from "next/link"
+
+export const metadata:Metadata = {
+    title: 'Iluminação Inteligente',
+    description: 'Muito além de acender e apagar luzes, essa tecnologia oferece praticidade, eficiência energética e ambientes personalizados para cada ocasião.',
+    
+    openGraph: {
+        title: `Iluminação Inteligente - ${SITE_NAME}`,
+        description: 'Muito além de acender e apagar luzes, essa tecnologia oferece praticidade, eficiência energética e ambientes personalizados para cada ocasião.',
+        images: [
+            {
+              url: '/assets/images/servicos/iluminacao-inteligente/banner_iluminacao-inteligente.webp',
+              width: 1920,
+              height: 569,
+              alt: `Iluminação Inteligente - ${SITE_NAME}`,
+            },
+        ],
+    },
+    twitter: {
+        images: [
+            {
+                url: '/assets/images/servicos/iluminacao-inteligente/banner_iluminacao-inteligente.webp',
+                width: 1920,
+                height: 569,
+                alt: `Iluminação Inteligente - ${SITE_NAME}`,
+            },
+        ],
+    },
+}
 
 export default function Page() {
     return (
         <>
             <div className="max-w-3xl mx-auto mb-16">
-                <h2 className="text-2xl md:text-5xl font-bold text-gray-800 mb-6 md:text-4xl">
+                <h2 className="text-2xl font-bold text-gray-800 mb-6 md:text-5xl ">
                     Iluminação Inteligente
                 </h2>
                 <div className="flex flex-col gap-5">
@@ -119,7 +149,7 @@ export default function Page() {
                 </p>
                 <Link 
                     href="/contato" 
-                    className="bg-(--color_primary) cursor-pointer rounded-lg py-3 px-6 text-sm text-white px-8 py-3"
+                    className="bg-(--color_primary) cursor-pointer rounded-lg py-3 px-6 text-sm text-white md:px-8 md:py-3"
                 >
                     Solicitar orçamento
                 </Link>

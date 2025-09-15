@@ -1,4 +1,34 @@
+import { Metadata } from "next";
 import Link from "next/link";
+import { SITE_NAME } from "../utils/constants";
+
+export const metadata:Metadata = {
+    title: 'Serviços',
+    description: 'Descubra nossos serviços de automação residencial, projetados para tornar sua casa mais conectada, confortável e segura.',
+    
+    openGraph: {
+        title: `Serviços - ${SITE_NAME}`,
+        description: 'Descubra nossos serviços de automação residencial, projetados para tornar sua casa mais conectada, confortável e segura.',
+        images: [
+            {
+              url: '/assets/images/servicos/banner_servicos.webp',
+              width: 1920,
+              height: 569,
+              alt: `Serviços - ${SITE_NAME}`,
+            },
+        ],
+    },
+    twitter: {
+        images: [
+            {
+                url: '/assets/images/servicos/banner_servicos.webp',
+                width: 1920,
+                height: 569,
+                alt: `Serviços - ${SITE_NAME}`,
+            },
+        ],
+    },
+}
 
 export default function Servicos(){
     return (
@@ -13,7 +43,7 @@ export default function Servicos(){
                 {/* ILUMINAÇÃO INTELIGENTE */}
                 <Link 
                     href="/servicos/iluminacao-inteligente" 
-                    className="group relative p-6 flex flex-col gap-5 justify-center rounded-sm w-full h-100 block bg-white shadow-md border-1 border-gray-200 md:h-120 sm:w-92"
+                    className="group relative p-6 flex flex-col gap-5 justify-center rounded-sm w-full h-100 bg-white shadow-md border-1 border-gray-200 md:h-120 sm:w-92"
                 >
                     <div className="z-1 size-15 rounded-full flex items-center justify-center text-white bg-(--color_primary) transition-colors duration-300 group-hover:bg-(--color_secondary)">
                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-7">
@@ -35,7 +65,7 @@ export default function Servicos(){
                 {/* SEGURANÇA E MONITORAMENTO */}
                 <Link 
                     href="/servicos/seguranca-e-monitoramento" 
-                    className="group relative p-6 flex flex-col gap-5 justify-center rounded-sm w-full h-100 block bg-white shadow-md border-1 border-gray-200 md:h-120 sm:w-92"
+                    className="group relative p-6 flex flex-col gap-5 justify-center rounded-sm w-full h-100 bg-white shadow-md border-1 border-gray-200 md:h-120 sm:w-92"
                 >
                     <div className="z-1 size-15 rounded-full flex items-center justify-center text-white bg-(--color_primary) transition-colors duration-300 group-hover:bg-(--color_secondary)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={3} stroke="currentColor" className="size-6">
@@ -57,7 +87,7 @@ export default function Servicos(){
                 {/* ENERGIA SUSTENTÁVEL */}
                 <Link
                     href="/servicos/energia-sustentavel"
-                    className="group relative p-6 flex flex-col gap-5 justify-center rounded-sm w-full h-100 block bg-white shadow-md border-1 border-gray-200 md:h-120 sm:w-92">
+                    className="group relative p-6 flex flex-col gap-5 justify-center rounded-sm w-full h-100 bg-white shadow-md border-1 border-gray-200 md:h-120 sm:w-92">
                     <div className="z-1 size-15 rounded-full flex items-center justify-center text-white bg-(--color_primary) transition-colors duration-300 group-hover:bg-(--color_secondary)">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="size-7">
                             <path strokeLinecap="round" strokeLinejoin="round" d="m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z" />

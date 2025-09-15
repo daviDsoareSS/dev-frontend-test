@@ -4,6 +4,9 @@
   --color_primary: #035F8A;
   --color_secondary: #FDBB2D;
 }
+::selection {
+    @apply bg-(--color_secondary) text-stone-100;
+}
 .swiper-wrapper{
   @apply pb-10;
 }
@@ -23,6 +26,8 @@
 .input_style::placeholder{
   @apply text-xs;
 }
+
+/* ANIMAÇÃO NA NAVBAR */
 @keyframes slideDown {
   0% {
     opacity: 0;

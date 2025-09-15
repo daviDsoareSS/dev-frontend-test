@@ -1,58 +1,52 @@
-
-import type { Metadata } from "next";
-
-export const metadata:Metadata = {
-  title: {
-    default: `${SITE_NAME}`,
-    template: `%s - ${SITE_NAME}`,
-    absolute: "",
-  },
-
-  description: "Automatize sua casa com tecnologia inteligente. Conforto, segurança e praticidade ao alcance de um toque."
-}
-
 import "./globals.css";
-
+import type { Metadata } from "next";
+import { SITE_NAME } from "./utils/constants";
 import Navbar from './components/Navbar';
 import WhatsappFloat from './components/WhatsappFloat';
 import Footer from './components/Footer';
-import localFont from 'next/font/local'
-import { SITE_NAME } from "./utils/constants";
+import { poppins } from "./fonts";
 
-const poppins = localFont({
-  src: [
-    {
-      path: '../public/assets/fonts/Poppins-Light.woff2',
-      weight: '300',
-      style: 'normal',
+export const metadata:Metadata = {
+    metadataBase: new URL(`${process.env.PUBLIC_BASE_URL}`),
+    title: {
+        default: `${SITE_NAME}`,
+        template: `%s - ${SITE_NAME}`,
     },
-    {
-      path: '../public/assets/fonts/Poppins-Regular.woff2',
-      weight: '400',
-      style: 'normal',
+    description: 'Com tecnologia de ponta e soluções personalizadas, oferecemos controle de iluminação, climatização, segurança e entretenimento na palma da sua mão.',
+    openGraph: {
+        title: `${SITE_NAME}`,
+        description: 'Com tecnologia de ponta e soluções personalizadas, oferecemos controle de iluminação, climatização, segurança e entretenimento na palma da sua mão.',
+        images: [
+            {
+              url: '/evox_automacao_residencial.webp',
+              width: 1200,
+              height: 800,
+              alt: `${SITE_NAME}`,
+            },
+        ],
     },
-    {
-      path: '../public/assets/fonts/Poppins-Medium.woff2',
-      weight: '500',
-      style: 'normal',
+    twitter: {
+        card: 'summary_large_image',
+        site: '@evox',
+        creator: '@evox',
+        images: [
+            {
+              url: '/evox_automacao_residencial.webp',
+              width: 1200,
+              height: 800,
+              alt: `${SITE_NAME}`,
+            },
+        ],
     },
-    {
-      path: '../public/assets/fonts/Poppins-SemiBold.woff2',
-      weight: '600',
-      style: 'normal',
+    other: {
+        'apple-mobile-web-app-title': `${SITE_NAME}`,
+        "author": `${SITE_NAME}`,
+        "robots": "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+        "theme-color": "#000000",
+        "application-name": `${SITE_NAME}`,
+        "content-language": "pt-BR",
     },
-    {
-      path: '../public/assets/fonts/Poppins-Bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-    {
-      path: '../public/assets/fonts/Poppins-Black.woff2',
-      weight: '800',
-      style: 'normal',
-    }
-  ],
-})
+}
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode;}>) 
 {

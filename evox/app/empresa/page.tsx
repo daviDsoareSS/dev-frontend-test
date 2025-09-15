@@ -1,5 +1,35 @@
+import type { Metadata } from "next";
 import Breadcrumb from "../components/Breadcrumb"
 import Image from "next/image"
+import { SITE_NAME } from "../utils/constants";
+
+export const metadata:Metadata = {
+    title: 'Empresa',
+    description: 'Desde o primeiro projeto, nos dedicamos a criar soluções de automação residencial que tornam a vida mais prática, segura e conectada.',
+    
+    openGraph: {
+        title: `Empresa - ${SITE_NAME}`,
+        description: 'Desde o primeiro projeto, nos dedicamos a criar soluções de automação residencial que tornam a vida mais prática, segura e conectada.',
+        images: [
+            {
+              url: '/assets/images/empresa/banner_empresa.webp',
+              width: 1920,
+              height: 569,
+              alt: `Empresa - ${SITE_NAME}`,
+            },
+        ],
+    },
+    twitter: {
+        images: [
+            {
+                url: '/assets/images/empresa/banner_empresa.webp',
+                width: 1920,
+                height: 569,
+                alt: `Empresa - ${SITE_NAME}`,
+            },
+        ],
+    },
+}
 
 export default function Empresa() {
     return (
