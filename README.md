@@ -25,7 +25,7 @@ pnpm dev
 # ou
 bun dev
 ```
-obs.: Caso dê algum erro relacionado ao npm, digite no terminal: **npm install**.
+obs.: Caso dê algum erro relacionado ao npm, digite no terminal: **npm install** ou **yarn install**.
 
 Logo em seguida acesse o link: http://localhost:3000
 
