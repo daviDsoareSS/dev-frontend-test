@@ -147,7 +147,7 @@ export default function Home() {
                     </svg> 
                     <blockquote>
                       <p className="text-lg text-white">
-                        "{text}"
+                        &quot;{text}&quot;
                       </p>
                     </blockquote>
                     <figcaption className="flex items-center justify-center mt-6 space-x-3">
